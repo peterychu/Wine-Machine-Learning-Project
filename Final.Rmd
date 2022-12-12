@@ -35,6 +35,25 @@ library(knitr)
 tidymodels_prefer()
 ```
 
+## Table of Contents
+
+1. Abstract
+
+2. Main Body
+
+3. Exploratory Data Analysis
+
+4. Data Splitting And Folding
+
+5. Model Creation And Training
+
+6. Results Of Models, Best Model Selection, And Applying Best Model
+
+7. Conclusion
+
+8. References
+
+9. Appendix
 
 
 ## Abstract 
@@ -122,7 +141,7 @@ lines(density(data$sulphates), col = 4, lwd = 2)
 
 Therefore when we create a recipe for our models to use, we will scale these predictors.
 
-## Data Splitting
+## Data Splitting And Folding
 
 I chose to split the data 70/30, so the training set will have 70% of the data and the testing will have 30%. this was done to ensure that we have enough data to adequately train our models before testing them. I also chose to stratisfy sample on the variable fqual as this is our variable of interest. After all this, I folded the data into 10 folds on the strata fqual again so that each fold will have enough of each wine quality rating. If this was not done, then some folds could have more ratings of Best which could skew our models. A recipe for the training data was made which involved scaling the aforementioned predictors with high outliers and making interaction terms between sugar and chlorides. This was done as the residual sugar creates the sweetness of the wine while chlorides make the bitterness. Thus they interact in the process of making wine. 
 
@@ -149,7 +168,7 @@ data_rec <- recipe(fqual ~ fixed_acidity + volatile_acidity + citric_acid + resi
 
 
 
-## Model Creation
+## Model Creation And Training
 
 ### Elastic Net Model
 
