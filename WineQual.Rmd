@@ -1,5 +1,5 @@
 ---
-title: "Final"
+title: "Wine Quality ML"
 author: "Peter Chu"
 date: "2022-11-27"
 output:
