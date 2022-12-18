@@ -1,5 +1,5 @@
 ---
-title: "Wine Quality ML"
+title: "Wine Quality Prediction / ML"
 author: "Peter Chu"
 date: "2022-11-27"
 output:
@@ -113,7 +113,8 @@ Let us see if there are any outliers for each variable which we need to scale la
 ```{r echo = FALSE}
 
 summDat <- summary(data %>% select(-fqual))
-kable(summDat)
+kable(summDat[,1:3])
+kable(summDat[,4:6])
 
 ```
 From our summary it appears that residual sugar, chlorides, free_sulfur_dioxide, total_sulfur_dioxide, sulphates are skweded heavily. Taking a look at their histograms confirms this.
